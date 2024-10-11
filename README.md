@@ -12,3 +12,19 @@ Problem 1:
 >> reverse("hello"):
       =  [4, 3, 2, 1, 0] (ints)
 ```
+Problem 2:
+```
+>> def rotate(seq, count) {
+..    return aggregate(select(indices, indices-count, ==), seq, "x") if count<=indices else aggregate(select(indices, indices+length-count, ==), seq, "x");
+..   }
+     console function: rotate(seq, count)
+>> rotate(tokens, 0);
+     s-op: out
+         Example: out("hello") = [h, e, l, l, o] (strings)
+>> rotate(tokens, 1);
+     s-op: out
+         Example: out("hello") = [o, h, e, l, l] (strings)
+>> rotate(tokens, 2);
+     s-op: out
+         Example: out("hello") = [l, o, h, e, l] (strings)
+```
