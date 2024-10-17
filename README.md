@@ -28,3 +28,20 @@ Problem 2:
      s-op: out
          Example: out("hello") = [l, o, h, e, l] (strings)
 ```
+Problem 3:
+```
+>> def swap(seq){
+..   return aggregate(select(indices, indices+1, ==), tokens, "x") if indices%2==0 else aggregate(select(indices, indices-1, ==), tokens, "x"); 
+..   }
+>> def newswap(seq){
+..   return aggregate(select(indices, indices, ==), tokens, "x") if indices==length-1 and length%2==1 else swap(seq);
+..   }
+>> set example("hello")
+>> newswap(tokens);
+     s-op: out
+         Example: out("hello") = [e, h, l, l, o] (strings)
+>> set example("ababab")
+>> newswap(tokens);
+     s-op: out
+         Example: out("ababab") = [b, a, b, a, b, a] (strings)
+```
