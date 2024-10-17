@@ -45,3 +45,19 @@ Problem 3:
      s-op: out
          Example: out("ababab") = [b, a, b, a, b, a] (strings)
 ```
+Problem 6.2
+```
+>> def howmany(seq, atom){
+..   return selector_width(select(seq, atom, ==)) if contains(seq, atom) else "0";
+..   }
+>> set example("hello")
+>> howmany(tokens, "a");
+     s-op: out
+         Example: out("hello") = [0]*5 (strings)
+>> howmany(tokens, "h");
+     s-op: out
+         Example: out("hello") = [1]*5 (ints)
+>> howmany(tokens, "l");
+     s-op: out
+         Example: out("hello") = [2]*5 (ints)
+```
