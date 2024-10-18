@@ -49,10 +49,10 @@ Problem 4
 ```
 >> sorted = sort(tokens, tokens);
      s-op: sorted
-         Example: sorted("hello") = [e, h, l, l, o] (strings)
+         Example: sorted("ababcabab") = [a, a, a, a, b, b, b, b, c] (strings)
 >> lastone = length-1;
      s-op: lastone
-         Example: lastone("hello") = [4]*5 (ints)
+         Example: lastone("ababcabab") = [8]*9 (ints)
 >> def maxseq(seq) {
 ..   return load_from_location(sorted, lastone);
 ..   }
@@ -96,4 +96,17 @@ Problem 7
 >> ag_count(tokens, "l");
      s-op: out
          Example: out("hello") = [0, 0, 1, 2, 2] (ints)
+```
+Problem 8: Write a function that returns the minimum value in the sequence repeated for every position. 
+```
+>> sorted = sort(tokens, tokens);
+     s-op: sorted
+         Example: sorted("ababcabab") = [a, a, a, a, b, b, b, b, c]
+>> def minseq(seq) {
+..   return load_from_location(sorted, 0);
+..   }
+     console function: minseq(seq)
+>> minseq(tokens);
+     s-op: out
+         Example: out("ababcabab") = [a]*9 (strings)
 ```
