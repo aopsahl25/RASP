@@ -45,6 +45,23 @@ Problem 3:
      s-op: out
          Example: out("ababab") = [b, a, b, a, b, a] (strings)
 ```
+Problem 4
+```
+>> sorted = sort(tokens, tokens);
+     s-op: sorted
+         Example: sorted("hello") = [e, h, l, l, o] (strings)
+>> lastone = length-1
+.. ;
+     s-op: lastone
+         Example: lastone("hello") = [4]*5 (ints)
+>> def maxseq(seq) {
+..   return load_from_location(sorted, lastone);
+..   }
+     console function: maxseq(seq)
+>> maxseq(tokens);
+     s-op: out
+         Example: out("ababcabab") = [c]*9 (strings)
+```
 Problem 6.2
 ```
 >> def howmany(seq, atom){
