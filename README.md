@@ -61,3 +61,23 @@ Problem 6.2
      s-op: out
          Example: out("hello") = [2]*5 (ints)
 ```
+Problem 7
+```
+>> one = indices+1
+>> def ag_count(seq, atom){
+..   return round(one*aggregate(mask_ag, indicator(seq==atom))) if contains(seq, atom) else "0";
+..   }
+     console function: ag_count(seq, atom)
+>> ag_count(tokens, "a");
+     s-op: out
+         Example: out("hello") = [0]*5 (strings)
+>> ag_count(tokens, "h");
+     s-op: out
+         Example: out("hello") = [1]*5 (ints)
+>> ag_count(tokens, "e");
+     s-op: out
+         Example: out("hello") = [0, 1, 1, 1, 1] (ints)
+>> ag_count(tokens, "l");
+     s-op: out
+         Example: out("hello") = [0, 0, 1, 2, 2] (ints)
+```
