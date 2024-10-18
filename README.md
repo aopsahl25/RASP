@@ -50,8 +50,7 @@ Problem 4
 >> sorted = sort(tokens, tokens);
      s-op: sorted
          Example: sorted("hello") = [e, h, l, l, o] (strings)
->> lastone = length-1
-.. ;
+>> lastone = length-1;
      s-op: lastone
          Example: lastone("hello") = [4]*5 (ints)
 >> def maxseq(seq) {
