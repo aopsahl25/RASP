@@ -61,6 +61,29 @@ Problem 4
      s-op: out
          Example: out("ababcabab") = [c]*9 (strings)
 ```
+Problem 5
+```
+dollar_loc = select_from_first(tokens, "$");
+pos_dollar = aggregate(dollar_loc, indices);
+def secondhalf(seq){
+..   return aggregate(select(indices, pos_dollar+pos_dollar-indices, ==), seq, “ “);
+..   }
+>> def reverse_ag(seq){
+..   return seq if indices<=pos_dollar else secondhalf(seq);
+..   }
+>> reverse_ag(tokens);
+     s-op: out
+         Example: out("hello$     ") = [h, e, l, l, o, $, o, l, l, e, h] (strings)
+>> reverse_ag(tokens);
+     s-op: out
+         Example: out("hello$ ") = [h, e, l, l, o, $, o] (strings)
+>> reverse_ag(tokens);
+     s-op: out
+         Example: out("hello$X") = [h, e, l, l, o, $, o] (strings)
+>> reverse_ag(tokens);
+     s-op: out
+         Example: out("hello$XXXXXXXXXX") = [h, e, l, l, o, $, o, l, l, e, h,  ,  ,  ,  ,  ] (strings)
+```
 Problem 6.2
 ```
 >> def howmany(seq, atom){
