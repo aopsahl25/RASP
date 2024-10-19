@@ -63,14 +63,32 @@ Problem 4
 ```
 Problem 5
 ```
-dollar_loc = select_from_first(tokens, "$");
-pos_dollar = aggregate(dollar_loc, indices);
-def secondhalf(seq){
-..   return aggregate(select(indices, pos_dollar+pos_dollar-indices, ==), seq, “ “);
+>> dollar_loc = select_from_first(tokens, "$");
+     selector: dollar_loc
+         Example:
+                             h e l l o $          
+                         h |           1          
+                         e |           1          
+                         l |           1          
+                         l |           1          
+                         o |           1          
+                         $ |           1          
+                           |           1          
+                           |           1          
+                           |           1          
+                           |           1          
+                           |           1      
+>> pos_dollar = aggregate(dollar_loc, indices);
+     s-op: pos_dollar
+         Example: pos_dollar("hello$     ") = [5]*11 (ints)
+>> def secondhalf(seq){
+..   return aggregate(select(indices, pos_dollar+pos_dollar-indices, ==), seq, " ");
 ..   }
+     console function: secondhalf(seq)
 >> def reverse_ag(seq){
 ..   return seq if indices<=pos_dollar else secondhalf(seq);
 ..   }
+     console function: reverse_ag(seq)
 >> reverse_ag(tokens);
      s-op: out
          Example: out("hello$     ") = [h, e, l, l, o, $, o, l, l, e, h] (strings)
