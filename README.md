@@ -47,6 +47,7 @@ Problem 3:
 ```
 Problem 4:
 ```
+>> set example("ababcabab")
 >> sorted = sort(tokens, tokens);
      s-op: sorted
          Example: sorted("ababcabab") = [a, a, a, a, b, b, b, b, c] (strings)
