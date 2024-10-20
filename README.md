@@ -45,7 +45,7 @@ Problem 3:
      s-op: out
          Example: out("ababab") = [b, a, b, a, b, a] (strings)
 ```
-Problem 4
+Problem 4:
 ```
 >> sorted = sort(tokens, tokens);
      s-op: sorted
@@ -61,7 +61,7 @@ Problem 4
      s-op: out
          Example: out("ababcabab") = [c]*9 (strings)
 ```
-Problem 5
+Problem 6.1:
 ```
 >> dollar_loc = select_from_first(tokens, "$");
      selector: dollar_loc
@@ -102,7 +102,7 @@ Problem 5
      s-op: out
          Example: out("hello$XXXXXXXXXX") = [h, e, l, l, o, $, o, l, l, e, h,  ,  ,  ,  ,  ] (strings)
 ```
-Problem 6.2
+Problem 6.2:
 ```
 >> def howmany(seq, atom){
 ..   return selector_width(select(seq, atom, ==)) if contains(seq, atom) else "0";
@@ -118,7 +118,7 @@ Problem 6.2
      s-op: out
          Example: out("hello") = [2]*5 (ints)
 ```
-Problem 7
+Problem 7:
 ```
 >> one = indices+1
 >> def ag_count(seq, atom){
